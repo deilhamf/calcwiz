@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" class="light scroll-smooth " dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>CalcWiz - Kalkulator Daring</title>
+        <meta name="description" content="Responsive Tailwind CSS Template">
+        <meta name="keywords" content="Onepage, creative, modern, Tailwind CSS, multipurpose, clean">
+        <meta name="author" content="Shreethemes">
+        <meta name="website" content="https://shreethemes.in">
+        <meta name="email" content="support@shreethemes.in">
+        <meta name="version" content="1..0">
+        <!-- favicon -->
+        <link href="assets/images/calcwiz.png" rel="shortcut icon">
+
+        <!-- Css -->
+        <!-- Main Css -->
+        <link rel="stylesheet" href="assets/css/tailwind.css">
+
+    </head>
+    
+    <body class="font-roboto text-base text-slate-900 dark:text-white bg-white dark:bg-slate-900">
+
+        <section class="relative bg-slate-50 dark:bg-slate-800 h-screen flex justify-center items-center bg-[url('../../assets/images/bg.png')] bg-no-repeat bg-cover">
+            <div class="container">
+                <div class="flex justify-center">
+                    <div class="w-[300px]">
+                        <div class="rounded p-4 bg-white dark:bg-slate-900 shadow dark:shadow-gray-700">
+                            <input type="text" id="Calculate" class="form-input w-full py-2 px-3 h-16 bg-slate-50 dark:bg-slate-800 dark:text-white rounded outline-none border-0 focus:ring-0 font-medium text-2xl mb-3 text-end" maxlength="15" placeholder="0" disabled>
+                            <div class="buttons grid grid-cols-3 gap-3">
+                                <button class="size-[60px] inline-flex items-center justify-center tracking-wide align-middle duration-500 text-xl font-semibold text-center rounded-full bg-slate-50 dark:bg-slate-800 mx-auto shadow-sm dark:shadow-gray-800" onclick="clearResult()">AC</button>
+                                <button class="size-[60px] inline-flex items-center justify-center tracking-wide align-middle duration-500 text-2xl font-medium text-center rounded-full bg-slate-50 dark:bg-slate-800 mx-auto shadow-sm dark:shadow-gray-800" onclick="appendToResult('+')">+</button>
+                                <button class="size-[60px] inline-flex items-center justify-center tracking-wide align-middle duration-500 text-2xl font-medium text-center rounded-full bg-slate-50 dark:bg-slate-800 mx-auto shadow-sm dark:shadow-gray-800" onclick="appendToResult('-')">−</button>
+                                <button class="size-[60px] inline-flex items-center justify-center tracking-wide align-middle duration-500 text-2xl font-medium text-center rounded-full bg-slate-50 dark:bg-slate-800 mx-auto shadow-sm dark:shadow-gray-800" onclick="appendToResult('*')">×</button>
+                                <button class="size-[60px] inline-flex items-center justify-center tracking-wide align-middle duration-500 text-2xl font-medium text-center rounded-full bg-slate-50 dark:bg-slate-800 mx-auto shadow-sm dark:shadow-gray-800" onclick="appendToResult('/')">÷</button>
+                                <button class="size-[60px] inline-flex items-center justify-center tracking-wide align-middle duration-500 text-2xl font-medium text-center rounded-full bg-slate-50 dark:bg-slate-800 mx-auto shadow-sm dark:shadow-gray-800" onclick="appendToResult('.')">•</button>
+                                <button class="size-[60px] inline-flex items-center justify-center tracking-wide align-middle duration-500 text-xl font-semibold text-center rounded-full bg-white dark:bg-slate-900 mx-auto shadow-sm dark:shadow-gray-800" onclick="appendToResult('7')">7</button>
+                                <button class="size-[60px] inline-flex items-center justify-center tracking-wide align-middle duration-500 text-xl font-semibold text-center rounded-full bg-white dark:bg-slate-900 mx-auto shadow-sm dark:shadow-gray-800" onclick="appendToResult('8')">8</button>
+                                <button class="size-[60px] inline-flex items-center justify-center tracking-wide align-middle duration-500 text-xl font-semibold text-center rounded-full bg-white dark:bg-slate-900 mx-auto shadow-sm dark:shadow-gray-800" onclick="appendToResult('9')">9</button>
+                                <button class="size-[60px] inline-flex items-center justify-center tracking-wide align-middle duration-500 text-xl font-semibold text-center rounded-full bg-white dark:bg-slate-900 mx-auto shadow-sm dark:shadow-gray-800" onclick="appendToResult('4')">4</button>
+                                <button class="size-[60px] inline-flex items-center justify-center tracking-wide align-middle duration-500 text-xl font-semibold text-center rounded-full bg-white dark:bg-slate-900 mx-auto shadow-sm dark:shadow-gray-800" onclick="appendToResult('5')">5</button>
+                                <button class="size-[60px] inline-flex items-center justify-center tracking-wide align-middle duration-500 text-xl font-semibold text-center rounded-full bg-white dark:bg-slate-900 mx-auto shadow-sm dark:shadow-gray-800" onclick="appendToResult('6')">6</button>
+                                <button class="size-[60px] inline-flex items-center justify-center tracking-wide align-middle duration-500 text-xl font-semibold text-center rounded-full bg-white dark:bg-slate-900 mx-auto shadow-sm dark:shadow-gray-800" onclick="appendToResult('1')">1</button>
+                                <button class="size-[60px] inline-flex items-center justify-center tracking-wide align-middle duration-500 text-xl font-semibold text-center rounded-full bg-white dark:bg-slate-900 mx-auto shadow-sm dark:shadow-gray-800" onclick="appendToResult('2')">2</button>
+                                <button class="size-[60px] inline-flex items-center justify-center tracking-wide align-middle duration-500 text-xl font-semibold text-center rounded-full bg-white dark:bg-slate-900 mx-auto shadow-sm dark:shadow-gray-800" onclick="appendToResult('3')">3</button>
+                                <button class="size-[60px] inline-flex items-center justify-center tracking-wide align-middle duration-500 text-xl font-semibold text-center rounded-full bg-white dark:bg-slate-900 mx-auto shadow-sm dark:shadow-gray-800" onclick="appendToResult('0')">0</button>
+                                <button class="size-[60px] inline-flex items-center justify-center tracking-wide align-middle duration-500 text-xl font-semibold text-center rounded-full bg-white dark:bg-slate-900 mx-auto shadow-sm dark:shadow-gray-800" onclick="appendToResult('00')">00</button>
+                                <button class="size-[60px] inline-flex items-center justify-center tracking-wide align-middle duration-500 text-2xl font-medium text-center rounded-full bg-red-600 text-white mx-auto shadow-sm dark:shadow-gray-800" onclick="calculate()">=</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="fixed top-1/4 -right-2 z-3">
+            <span class="relative inline-block rotate-90">
+                <input type="checkbox" class="checkbox opacity-0 absolute" id="chk" />
+                <label class="label bg-slate-900 dark:bg-white shadow dark:shadow-gray-800 cursor-pointer rounded-full flex justify-between items-center p-1 w-14 h-8" for="chk">
+                    <i data-feather="moon" class="size-4 text-yellow-500"></i>
+                    <i data-feather="sun" class="size-4 text-yellow-500"></i>
+                    <span class="ball bg-white dark:bg-slate-900 rounded-full absolute top-[2px] left-[2px] w-7 h-7"></span>
+                </label>
+            </span>
+        </div>
+
+        <script src="assets/libs/feather-icons/feather.min.js"></script>
+        <script src="assets/js/app.js"></script>
+    </body>
+</html>
